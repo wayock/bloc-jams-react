@@ -17,6 +17,7 @@ class Album extends Component {
 
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
+  }
 
     play() {
       this.audioElement.play();
@@ -43,7 +44,7 @@ class Album extends Component {
       }
     }
 
-  }
+
 
   render() {
     return (
@@ -73,16 +74,6 @@ class Album extends Component {
           </tbody>
         </table>
       </section>
-/*    {
-      this.state.albums.map( (album, index) =>
-        <Link to={`/album/${album.slug}`} key={index}>
-          <img src={album.albumCover} alt={album.title} />
-          <div>{album.title}</div>
-          <div>{album.artist}</div>
-          <div>{album.songs.length} songs</div>
-        </Link>
-    )
-  }*/
     );
   }
 }
