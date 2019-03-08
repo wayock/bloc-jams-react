@@ -44,6 +44,16 @@ class Album extends Component {
       }
     }
 
+    hoverSong() {
+      if (this.state.hoverSong === onMouseEnter()) {
+        return <span className="ion-play">
+        <ion-icon name="play-circle"></ion-icon>
+        </span>
+      } else {this.state.hoverSong === onMouseLeave() {
+        return <span className="ion-pause"> <ion-icon name="pause"></ion-icon>
+        </span>
+      }
+    }
 
 
   render() {
