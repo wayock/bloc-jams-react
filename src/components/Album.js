@@ -50,23 +50,13 @@ class Album extends Component {
 
     playPauseIcons(song, index){
         if (index === this.state.onHover) {
-          return <span className="ion-play"></span>
+          return <span className="ion-play"><ion-icon name="play"></ion-icon></span>
       } else if (song === this.state.currentSong && this.state.isPlaying) {
-        return <span className="ion-pause"></span>;
+        return <span className="ion-pause"><ion-icon name="pause"></ion-icon></span>;
       } else {
         return index + 1;
       }
     }
-    /*
-      this.setState.hoveredSong === song;
-        if (this.state.hoverSong === onMouseEnter()) {
-          return <span className="ion-play">
-          <ion-icon name="play-circle"></ion-icon>
-          </span>
-        } else (this.state.hoverSong === onMouseLeave()) {
-          return <span className>{index + 1}</span>
-        }
-    }*/
 
 
   render() {
