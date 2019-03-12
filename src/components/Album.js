@@ -103,6 +103,7 @@ handleTimeChange(e) {
   this.setState({ currentTime: newTime });
 }
 
+
   render() {
     return (
       <section className="album">
