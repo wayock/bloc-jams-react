@@ -57,7 +57,8 @@ class Album extends Component {
        volumechange: e => {
          this.setState({ volume: this.audioElement.volume });
        },
-    this.audioElement.addEventListener('volumechange', this.eventListeners.volume);
+    //this.audioElement.addEventListener('volumechange', this.eventListeners.volume);
+     }
    }
 
     setSong(song) {
@@ -76,7 +77,7 @@ class Album extends Component {
     }
 
     setOnHover(index) {
-      this.setState({ onHover: index });  //which song?????
+      this.setState({ onHover: index });  //which song?
     }
 
     playPauseIcons(song, index){
@@ -87,6 +88,18 @@ class Album extends Component {
       } else {
         return index + 1;
       }
+    }
+
+    formatTime(time) {
+      const minutes = Math.floor(time / 60)
+      const seconds = Math.floor(time % 60)
+      if(time === isNaN){
+        return "-:--";
+      } else if (time < 10){
+        return `${minutes}:0${seconds}`;
+      } else {
+        return `${minutes}:${seconds}`;
+        }
     }
 
     handlePrevClick() {
@@ -113,7 +126,7 @@ class Album extends Component {
     }
 
     handleVolumeChange(e) {
-     const newVolume = this.audioElement.volume * e.target.value;
+     const newVolume = e.target.value;
      this.audioElement.volume = newVolume;
      this.setState({ volume: newVolume });
    }
@@ -153,8 +166,8 @@ class Album extends Component {
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime}
-          duration={this.audioElement.duration}
+          currentTime={this.formatTime(this.audioElement.currentTime)}
+          duration={this.formatTime(this.audioElement.duration)}
           volume={this.audioElement.volume}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
