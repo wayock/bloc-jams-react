@@ -31,3 +31,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+header {
+  /*background-color: silver;*/
+}
+
+.nav-links {
+  background-color: lightblue;
+  color: white;
+  font-weight:bold;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  flex: 2;
+}
+
+main {
+  background-image: url("/Users/wayock/bloc/pictures/oldfasionradio.jpg");
+}
