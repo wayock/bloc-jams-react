@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Album.css';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
@@ -143,38 +144,46 @@ class Album extends Component {
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
-        <table id="song-list">
-          <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
-          </colgroup>
-          <tbody>
-            {this.state.album.songs.map( (song, index) =>
-            <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.setOnHover(index)} onMouseLeave={() => this.setOnHover(null)} >
-              <td className="song-actions">
-                <button>
-                    <span className="song-number">{this.playPauseIcons(song, index)}</span>
-                </button>
-              </td>
-              <td>{song.title}</td>
-              <td>{this.formatTime(song.duration)}</td>
-            </tr>
-          )}
-          </tbody>
-        </table>
-        <PlayerBar
-          isPlaying={this.state.isPlaying}
-          currentSong={this.state.currentSong}
-          currentTime={this.formatTime(this.audioElement.currentTime)}
-          duration={this.formatTime(this.audioElement.duration)}
-          volume={this.audioElement.volume}
-          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-          handlePrevClick={() => this.handlePrevClick()}
-          handleNextClick={() => this.handleNextClick()}
-          handleTimeChange={(e) => this.handleTimeChange(e)}
-          handleVolumeChange={(e) => this.handleVolumeChange(e)}
-        />
+        <div className="flex-container">
+          <div className="flex-row">
+            <div className="col-sm">
+              <table id="song-list">
+                <colgroup>
+                  <col id="song-number-column" />
+                  <col id="song-title-column" />
+                  <col id="song-duration-column" />
+                </colgroup>
+                <tbody>
+                  {this.state.album.songs.map( (song, index) =>
+                  <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.setOnHover(index)} onMouseLeave={() => this.setOnHover(null)} >
+                    <td className="song-actions">
+                      <button>
+                          <span className="song-number">{this.playPauseIcons(song, index)}</span>
+                      </button>
+                    </td>
+                    <td>{song.title}</td>
+                    <td>{this.formatTime(song.duration)}</td>
+                  </tr>
+                )}
+                </tbody>
+              </table>
+            </div>
+            <div className="col-sm">
+              <PlayerBar
+                isPlaying={this.state.isPlaying}
+                currentSong={this.state.currentSong}
+                currentTime={this.formatTime(this.audioElement.currentTime)}
+                duration={this.formatTime(this.audioElement.duration)}
+                volume={this.audioElement.volume}
+                handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+                handlePrevClick={() => this.handlePrevClick()}
+                handleNextClick={() => this.handleNextClick()}
+                handleTimeChange={(e) => this.handleTimeChange(e)}
+                handleVolumeChange={(e) => this.handleVolumeChange(e)}
+              />
+            </div>
+          </div>
+        </div>
       </section>
     );
   }
