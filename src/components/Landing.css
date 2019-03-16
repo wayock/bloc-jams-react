@@ -1,0 +1,11 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+
+}
+
+.earbuds {
+  width: "25";
+  height: "25";
+}
