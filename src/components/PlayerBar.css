@@ -1,0 +1,16 @@
+.player-bar {
+
+}
+
+
+#time-control {
+
+}
+
+.current-time {
+		left: 2.5em; /* 40 */
+}
+
+.total-time {
+  right: 2.5em; /* 40 */
+}
