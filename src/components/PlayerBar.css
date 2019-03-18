@@ -1,16 +1,11 @@
-.player-bar {
 
+#buttons {
+padding-bottom: 10px;
 }
 
 
-#time-control {
 
-}
-
-.current-time {
-		left: 2.5em; /* 40 */
-}
-
-.total-time {
-  right: 2.5em; /* 40 */
+.time-control {
+    position: relative;
+    font-size: 0.8rem;
 }

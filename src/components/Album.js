@@ -149,7 +149,7 @@ class Album extends Component {
           </div>
         </div>
         <div className="container">
-          <div className="flex-row">
+          <div className="row">
             <div className="col-sm">
               <table id="song-list">
                 <colgroup>
@@ -171,6 +171,8 @@ class Album extends Component {
                 )}
                 </tbody>
               </table>
+            </div>
+            <div className="col-sm">
             </div>
             <div className="col-sm">
               <PlayerBar

@@ -16,7 +16,7 @@ class PlayerBar extends Component {
              <span className="ion-md-skip-forward"></span>
            </button>
          </section>
-         <section id="time-control">
+         <section id="time-control" >
            <div className="current-time">{this.props.currentTime}</div>
            <input
              type="range"
