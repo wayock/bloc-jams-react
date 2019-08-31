@@ -10,23 +10,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <nav className="navbar">
-            <Link className="nav-links" to='/'>Home</Link>
-            <Link className="nav-links" to='/library'>Library</Link>
+        <header class="container">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+              <Link className="nav-links" to='/'>Home</Link>
+              <Link className="nav-links" to='/library'>Library</Link>
+            </div>
           </nav>
         </header>
         <main className="container">
-          <h1>Bloc Jams</h1>
-          <div className="container">
-            <Route exact path="/" component={Landing} />
-          </div>
-          <div class="container">
-            <Route path="/library" component={Library} />
-          </div>
-          <div class="container">
-            <Route path="/album/:slug" component={Album} />
-          </div>
+          <section class="row centered-form center-block text-center">
+            <h1>Bloc Jams</h1>
+
+            <div className="container d-flex flex-wrap align-items-center">
+              <Route exact path="/" component={Landing} />
+            </div>
+            <div class="container d-flex flex-wrap align-items-center">
+              <Route path="/library" component={Library} />
+            </div>
+            <div class="container d-flex flex-wrap align-items-center">
+              <Route path="/album/:slug" component={Album} />
+            </div>
+          </section>
         </main>
       </div>
     );
