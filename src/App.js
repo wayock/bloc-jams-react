@@ -20,8 +20,9 @@ class App extends Component {
         </header>
         <main className="container">
           <section class="row centered-form center-block text-center">
-            <h1>Bloc Jams</h1>
-
+            <div className="container d-flex flex-wrap align-items-center">
+              <h1>Bloc Jams</h1>
+            </div>
             <div className="container d-flex flex-wrap align-items-center">
               <Route exact path="/" component={Landing} />
             </div>
