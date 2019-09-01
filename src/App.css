@@ -37,6 +37,11 @@ h1 {
   color: black;
 }
 
+main {
+  padding-top: 60px;
+  font-weight: 900;
+}
+
 .nav-links {
   color: white;
   font-weight: 900;
